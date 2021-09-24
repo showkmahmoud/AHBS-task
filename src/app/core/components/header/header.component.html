@@ -1,1 +1,91 @@
-<p>header works!</p>
+<nav class="navbar py-lg-0 navbar-expand-lg navbar-light navbar_wrapper">
+  <figure class="col-5 col-lg-2">
+    <img
+      class="img-fluid"
+      src="../../../../assets/icons&imgs/logo.png"
+      alt=""
+    />
+  </figure>
+  <button class="navbar-toggler" type="button" (click)="onToggle()">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div
+    class="collapse navbar-collapse"
+    id="navbarTogglerDemo02"
+    [ngClass]="{ show: menuOpen }"
+  >
+    <form class="mt-lg-2 my-2 col-11 col-lg-5">
+      <div class="input-group mb-3 d-flex flex-nowrap">
+        <input
+          type="text"
+          class="form-control search_input"
+          placeholder="Search For Patient (Name, Code, Phone Number) "
+        />
+        <div class="input-group-append">
+          <button class="btn btn_wrapper">
+            <i class="fa fa-search"></i>
+          </button>
+        </div>
+      </div>
+    </form>
+    <div class="ml-auto d-lg-flex flex-nowrap navbar__info">
+      <div class="dropdown navbar__info__dropdown">
+        <select class="btn dropdown-toggle text-left text-capitalize">
+          <option class="p-2" selected value="1">english</option>
+          <option class="p-2" value="2">arabic</option>
+        </select>
+      </div>
+      <div
+        class="
+          navbar__info__user_info
+          ml-3
+          mt-2 mt-lg-0
+          ml-lg-0
+          d-flex
+          flex-nowrap
+        "
+      >
+        <figure class="mr-2">
+          <img
+            class="img-fluid"
+            src="../../../../assets/icons&imgs/user.png"
+            alt=""
+          />
+        </figure>
+        <p class="mt-1 text-capitalize">{{ userName }}</p>
+      </div>
+    </div>
+  </div>
+</nav>
+<div class="px-3 my-2 d-flex flex-nowrap">
+  <div class="dropdown">
+    <button
+      class="navbar-toggler dropdown_wrapper mr-1 pt-2 pb-3"
+      (click)="onToggle()"
+    >
+      <span class="navbar-toggler-icon my-0 mr-2">
+        <i class="text-white fa fa-align-justify fa-2x"></i>
+      </span>
+    </button>
+    <div class="dropdown-menu w-100" [ngClass]="{ show: menuOpen }">
+      <a class="dropdown-item" type="button" routerLink="product">Product</a>
+    </div>
+  </div>
+
+  <nav class="breadcrumb_wrapper w-100" aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <i class="text-white fa fa-home fa-2x"></i>
+      </li>
+      <li class="breadcrumb-item mt-2 mr-1">
+        <a routerLink="home" routerLinkActive="active">Home</a>
+      </li>
+      <div *ngIf="route === '/landing/product' ? true : false">
+        <li class="breadcrumb-item mt-2">
+          <a routerLink="product" routerLinkActive="active"> > Product</a>
+        </li>
+      </div>
+    </ol>
+  </nav>
+</div>
