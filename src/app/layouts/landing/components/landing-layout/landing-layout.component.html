@@ -1,6 +1,11 @@
 <app-header></app-header>
-<div class="container">
-  <router-outlet></router-outlet>
+<div *ngIf="route === '/landing/product' ? true : false">
+  <h3 class="mt-0 mb-1 ml-3">Product</h3>
+</div>
+<div class="layout-wrapper bg-white mx-3">
+  <div class="container py-5">
+    <router-outlet></router-outlet>
+  </div>
 </div>
 
 <app-footer></app-footer>
