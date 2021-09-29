@@ -5,15 +5,7 @@ import { HomePageComponent } from './components/home-page/home-page.component';
 import { ProductPageComponent } from './components/product-page/product-page.component';
 
 @NgModule({
-  declarations: [
-    HomePageComponent,
-    ProductPageComponent
-  ],
-  imports: [
-    ReactiveFormsModule,
-    FormsModule,
-    CommonModule,
-
-  ]
+  declarations: [HomePageComponent, ProductPageComponent],
+  imports: [ReactiveFormsModule, FormsModule, CommonModule],
 })
-export class PagesModule { }
+export class PagesModule {}

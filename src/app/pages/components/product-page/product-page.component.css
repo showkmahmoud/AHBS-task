@@ -1,12 +1,16 @@
 i {
   color: var(--product-icons);
 }
+
 .product__basic_info__hrader {
-  border-bottom: solid rgb(187, 187, 187) 1px;
+  border-bottom: solid #bbbbbb 1px;
 }
+
 .button_wrapper {
   background-color: var(--second-bg);
 }
+
 .search_input:focus {
   background-color: var(--second-bg);
 }
+/*# sourceMappingURL=product-page.component.css.map */

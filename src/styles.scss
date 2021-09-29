@@ -39,6 +39,7 @@ $AHBS-Task-theme: mat.define-light-theme(
 :root {
   --main-bg: #0357a8;
   --second-bg: #e8f0f7;
+  --product-icons: #84e8eb;
 }
 body {
   background-color: var(--second-bg);
@@ -50,6 +51,20 @@ a:hover {
 }
 .active {
   color: #fff;
+}
+.search_input {
+  padding: 0 10px;
+  background-color: var(--second-bg);
+  border: none;
+  border-radius: 5px;
+}
+
+.btn_wrapper {
+  background-color: var(--second-bg);
+  border-left: solid 2px var(--main-bg);
+  i {
+    color: var(--main-bg);
+  }
 }
 
 html,

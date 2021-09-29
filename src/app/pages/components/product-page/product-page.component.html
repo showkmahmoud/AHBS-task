@@ -1,1 +1,110 @@
-<p>product-page works!</p>
+<div class="product__basic_info pt-2 pb-5">
+  <h3 class="product__basic_info__hrader px-2 text-capitalize">
+    <i class="fa fa-clone fa-1x mr-1"></i> basic information
+  </h3>
+  <div class="product__basic_info__form pb-5">
+    <form [formGroup]="productForm" class="">
+      <div class="d-flex flex-wrap justify-content-between">
+        <div class="warehouse_input col-4">
+          <p>warehouse</p>
+          <div class="input-group mr-1">
+            <select
+              required
+              class="form-control search_input"
+              formControlName="warehouse"
+            >
+              <!-- <option disabled>select warehouse</option> -->
+              <option *ngFor="let item of data; let i = index">
+                {{ item.label }}
+              </option>
+            </select>
+            <div class="input-group-append">
+              <!-- <button
+              type="button"
+              class="btn dropdown-toggle dropdown-toggle-split button_wrapper"
+            >
+              <span class="sr-only">Toggle Dropdown</span>
+            </button> -->
+            </div>
+          </div>
+        </div>
+        <div class="type_input col-4">
+          <p>type</p>
+          <div class="input-group mr-1">
+            <select
+              required
+              class="form-control search_input"
+              formControlName="type"
+            >
+              <option
+                *ngFor="let type of objOne.wareHouse1.typeA; let i = index"
+              >
+                {{ type.name }} {{ type.onHand }}
+              </option>
+            </select>
+            <div class="input-group-append">
+              <button
+                type="button"
+                class="btn dropdown-toggle dropdown-toggle-split button_wrapper"
+              >
+                <span class="sr-only">Toggle Dropdown</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="pt-4 mt-3 pl-5 col-3">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            value=""
+            id="defaultCheck1"
+          />
+          <label
+            class="form-check-label text-capitalize pt-1"
+            for="defaultCheck1"
+          >
+            show zero balance
+          </label>
+        </div>
+        <div class="col-4 mt-4 text-capitalize">
+          <p>product classification</p>
+          <div class="d-flex">
+            <div class="form-check mr-5">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="exampleRadios"
+                id="exampleRadios1"
+                value="option1"
+                checked
+              />
+              <label class="form-check-label" for="exampleRadios1">
+                all product
+              </label>
+            </div>
+            <div class="form-check ml-5 pl-5">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="exampleRadios"
+                id="exampleRadios2"
+                value="option2"
+              />
+              <label class="form-check-label" for="exampleRadios2">
+                specific product
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button
+        type="button"
+        class="btn btn-secondary my-5 ml-auto d-block"
+        [disabled]="productForm.invalid"
+      >
+        Search
+      </button>
+    </form>
+  </div>
+  <button (click)="onConsole()" class="btn btn-primary">solve</button>
+</div>
